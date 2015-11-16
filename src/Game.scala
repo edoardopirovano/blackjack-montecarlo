@@ -19,14 +19,16 @@ class Game {
     deck.addAll(playerCards ++ dealerCards)
     deck.shuffle()
     dealerCards = deck.getCard :: List()
-    playerCards = List()
-    var desiredValue = Random.nextInt(17) + 4
-    if (desiredValue > 11 && Random.nextBoolean()) {
-      desiredValue -= 11
-      playerCards = deck.getAce :: playerCards
-    }
-    playerCards = deck.getValue(desiredValue) ++ playerCards
-    if (!canPlay) start()
+    playerCards = deck.getCard :: deck.getCard :: List()
+    //    Code for exploring starts commented out
+    //    playerCards = List()
+    //    var desiredValue = Random.nextInt(17) + 4
+    //    if (desiredValue > 11 && Random.nextBoolean()) {
+    //      desiredValue -= 11
+    //      playerCards = deck.getAce :: playerCards
+    //    }
+    //    playerCards = deck.getValue(desiredValue) ++ playerCards
+    //    if (!canPlay) start()
   }
 
   /**
